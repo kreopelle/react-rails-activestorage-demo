@@ -3,5 +3,8 @@ class PostSerializer < ActiveModel::Serializer
 
   attributes :id, :title, :body
 
+  def file_url
+    return rails_blob_url(object.file)
+  end
 
 end
