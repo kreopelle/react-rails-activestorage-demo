@@ -46,8 +46,8 @@ class FormContainer extends Component {
       <div>
         <h2>Upload File</h2>
         <form onSubmit={this.handleOnSubmit}>
-          <input type="text" name="title" id="title" placeholder="title" onChange={this.handleOnChange} />
-          <input type="text" name="body" id="body" placeholder="body" onChange={this.handleOnChange} />
+          <input type="text" name="title" id="title" placeholder="title" onChange={this.handleOnChange} value={this.state.title} />
+          <input type="text" name="body" id="body" placeholder="body" onChange={this.handleOnChange} value={this.state.body} />
           <input type="file" name="file" id="file" onChange={this.handleUpload} />
           <input type="submit" />
         </form>
