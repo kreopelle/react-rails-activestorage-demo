@@ -24,6 +24,21 @@ class FormContainer extends Component {
     })
   }
 
+  handleOnSubmit = event => {
+    event.preventDefault()
+    const title = this.state.title
+    const description = this.state.description
+    const file = this.state.file
+    const sound = {sound: {title: title, description: description, file: file}}
+    // action goes here
+    this.setState({
+      title: '',
+      description: '',
+      file: null
+    })
+    document.getElementById("file").value = null
+  }
+
   render(){
     return(
       <div>
