@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { addPost } from './actions.js'
 
 class FormContainer extends Component {
   constructor(props){
@@ -29,8 +31,8 @@ class FormContainer extends Component {
     const title = this.state.title
     const description = this.state.description
     const file = this.state.file
-    const sound = {sound: {title: title, description: description, file: file}}
-    // action goes here
+    const post = {post: {title: title, description: description, file: file}}
+    this.props.addPost(post)
     this.setState({
       title: '',
       description: '',
@@ -54,4 +56,4 @@ class FormContainer extends Component {
   }
 }
 
-export default connect()(FormContainer)
+export default connect(null, { addPost })(FormContainer)
