@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
 
 class FormContainer extends Component {
+  constructor(props){
+    super(props)
+    this.state={
+      title: '',
+      description: '',
+      file: null
+    }
+    this.handleOnChange = this.handleOnChange.bind(this)
+    this.handleOnSubmit = this.handleOnSubmit.bind(this)
+  }
 
   render(){
     return(
