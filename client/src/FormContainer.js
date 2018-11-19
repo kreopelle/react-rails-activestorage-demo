@@ -12,14 +12,20 @@ class FormContainer extends Component {
     this.handleOnSubmit = this.handleOnSubmit.bind(this)
   }
 
+  handleOnChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
   render(){
     return(
       <div>
         <h2>Upload File</h2>
-        <form>
-          <input type="text" name="title" id="title" placeholder="title" />
-          <input type="text" name="description" id="description" placeholder="description" />
-          <input type="file" name="file" id="file" />
+        <form onSubmit={this.handleOnSubmit}>
+          <input type="text" name="title" id="title" placeholder="title" onChange={this.handleOnChange} />
+          <input type="text" name="description" id="description" placeholder="description" onChange={this.handleOnChange} />
+          <input type="file" name="file" id="file" onChange={this.handleUpload} />
           <input type="submit" />
         </form>
      </div>
