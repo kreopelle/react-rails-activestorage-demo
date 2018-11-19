@@ -5,7 +5,7 @@ export function addPost(post){
     postData.append("post[title]", post.post.title)
     postData.append("post[description]", post.post.description)
     postData.append("post[file]", post.post.file)
-    return fetch('/api/posts', {
+    return fetch('/posts', {
       method: 'POST',
       body: postData,
       contentType: false,
