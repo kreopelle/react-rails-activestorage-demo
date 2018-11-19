@@ -18,6 +18,12 @@ class FormContainer extends Component {
     })
   }
 
+  handleUpload = event => {
+    this.setState({
+      file: event.target.files[0]
+    })
+  }
+
   render(){
     return(
       <div>
