@@ -3,7 +3,7 @@ export function addPost(post){
     dispatch({ type: 'START_ADD_POST_REQUEST' })
     const postData = new FormData()
     postData.append("post[title]", post.post.title)
-    postData.append("post[description]", post.post.description)
+    postData.append("post[body]", post.post.body)
     postData.append("post[file]", post.post.file)
     return fetch('/posts', {
       method: 'POST',

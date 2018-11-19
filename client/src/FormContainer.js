@@ -7,7 +7,7 @@ class FormContainer extends Component {
     super(props)
     this.state={
       title: '',
-      description: '',
+      body: '',
       file: null
     }
     this.handleOnChange = this.handleOnChange.bind(this)
@@ -29,13 +29,13 @@ class FormContainer extends Component {
   handleOnSubmit = event => {
     event.preventDefault()
     const title = this.state.title
-    const description = this.state.description
+    const body = this.state.body
     const file = this.state.file
-    const post = {post: {title: title, description: description, file: file}}
+    const post = {post: {title: title, body: body, file: file}}
     this.props.addPost(post)
     this.setState({
       title: '',
-      description: '',
+      body: '',
       file: null
     })
     document.getElementById("file").value = null
@@ -47,7 +47,7 @@ class FormContainer extends Component {
         <h2>Upload File</h2>
         <form onSubmit={this.handleOnSubmit}>
           <input type="text" name="title" id="title" placeholder="title" onChange={this.handleOnChange} />
-          <input type="text" name="description" id="description" placeholder="description" onChange={this.handleOnChange} />
+          <input type="text" name="body" id="body" placeholder="body" onChange={this.handleOnChange} />
           <input type="file" name="file" id="file" onChange={this.handleUpload} />
           <input type="submit" />
         </form>
