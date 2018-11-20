@@ -6,6 +6,11 @@ import { connect } from 'react-redux'
 import Posts from './Posts.js'
 
 class App extends Component {
+
+  componentDidMount(){
+    this.props.getPosts()
+  }
+
   render() {
     return (
       <div className="App">
