@@ -15,6 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <FormContainer />
+        <Posts posts={this.props.posts} />
       </div>
     );
   }
