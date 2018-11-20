@@ -14,3 +14,12 @@ export function addPost(post){
     .then(post => dispatch({ type: 'ADD_POST', post }))
   }
 }
+
+export function getPosts(post){
+  return (dispatch) => {
+    dispatch({ type: 'START_GET_POSTS_REQUEST' })
+     return fetch('/posts')
+    .then(resp => resp.json())
+    .then(posts => dispatch({ type: 'GET_POSTS', posts }))
+  }
+}
