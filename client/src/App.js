@@ -15,4 +15,10 @@ class App extends Component {
   }
 }
 
-export default connect(null, { getPosts })(App);
+function mapStateToProps(state){
+  return {
+    posts: state.posts
+  }
+}
+
+export default connect(mapStateToProps, { getPosts })(App);
